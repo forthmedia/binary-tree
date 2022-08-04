@@ -1,5 +1,4 @@
 from random import randrange
-from sys import setdlopenflags
 
 # binary tree node class
 class Node:
