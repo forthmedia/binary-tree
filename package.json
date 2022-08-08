@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Binary tree creation and search in Python and Javascript",
   "main": "index.js",
+  "type": "module",
   "scripts": {
   },
   "repository": {

@@ -1,4 +1,4 @@
-class Node {
+export default class Node {
     constructor(value) {
         this.value = value;
         this.left = null;
@@ -31,11 +31,3 @@ class Node {
         }
     }
 }
-
-// initialize a tree of random integers from 1 to 100
-const nodes = [...Array(11)].map(() => Math.ceil(Math.random() * 100));
-const tree = new Node(nodes.pop());
-for (n of nodes) {
-    tree.insert(n)
-}
-tree.inorder()
