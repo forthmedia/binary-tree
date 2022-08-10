@@ -1,4 +1,4 @@
-import Node from './binary-tree.js'
+import Node from './tree.js'
 
 // initialize trees of random integers from 1 to 100
 const nodes = [...Array(11)].map(() => Math.ceil(Math.random() * 100));
