@@ -1,5 +1,3 @@
-from random import randrange
-
 # binary tree node class
 class Node:
     def __init__(self, value) -> None:
