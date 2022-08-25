@@ -29,13 +29,13 @@ const maxDepth = root => {
     let left = maxDepth(root.left);
     let right = maxDepth(root.right)
 
-    let max = Math.max(left, right);
-    return max + 1;
+    let maximum = Math.max(left, right);
+    return maximum + 1;
 }
 console.log('Max depth tree 1 is: ' + maxDepth(tree1));
 console.log('Max depth tree 2 is: ' + maxDepth(tree2));
 
-// LEVEL ORDER
+// LEVEL ORDER BFS
 const levelOrder = root => {
     const result = [];
     const queue = [];
@@ -60,5 +60,5 @@ const levelOrder = root => {
     }
     return result;
 }
-console.log('Level order');
+console.log('Level order bfs');
 console.log(levelOrder(tree1));
