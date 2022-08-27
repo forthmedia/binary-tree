@@ -6,12 +6,16 @@ nodes1 = [randrange(1,101) for i in range(11)]
 tree1 = tree.Node(nodes1.pop())
 for n in nodes1:
     tree1.insert(n)
-tree1.inorder()
 
 nodes2 = [randrange(1,101) for i in range(11)]
 tree2 = tree.Node(nodes2.pop())
 for n in nodes2:
     tree2.insert(n)
+
+print('tree 1')
+tree1.print()
+print('\ntree 2')
+tree2.print()
 
 # IS SAME TREE
 def isSameTree(p,q):
@@ -24,8 +28,8 @@ def isSameTree(p,q):
 
     return isSameTree(p.left, q.left) and isSameTree(p.right, q.right)
 
-print('Is same tree ', isSameTree(tree1, tree1))
-print('Is same tree ', isSameTree(tree1, tree2))
+print('\nIs same tree: tree1 tree1', isSameTree(tree1, tree1))
+print('Is same tree: tree1 tree2', isSameTree(tree1, tree2))
 
 # MAX DEPTH
 def maxDepth(root):
@@ -38,7 +42,7 @@ def maxDepth(root):
     maximum = max(left, right)
     return maximum + 1
 
-print('Max depth tree 1 is:', maxDepth(tree1))
+print('\nMax depth tree 1 is:', maxDepth(tree1))
 print('Max depth tree 2 is:', maxDepth(tree2))
 
 # LEVEL ORDER BFS
@@ -65,4 +69,5 @@ def levelOrder(root):
 
     return result
 
-print('Level order BFS\n', levelOrder(tree1))
+print('\nLevel order BFS tree1\n', levelOrder(tree1))
+print('Level order BFS tree2\n', levelOrder(tree2))

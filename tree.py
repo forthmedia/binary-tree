@@ -17,9 +17,17 @@ class Node:
             else:
                 self.right.insert(value)
     
-    def inorder(self):
+    def print(self, padding = '', pipe = False, pointer = '   '):
+
+        print(padding + pointer + str(self.value))
+
+        if pipe:
+            padding += '│  '
+        else:
+            padding += '   '
+
         if self.left is not None:
-            self.left.inorder()
-        print(self.value)
+            self.left.print(padding, True if self.right else False, '├──' if self.right else '└──')
+
         if self.right is not None:
-            self.right.inorder()
+            self.right.print(padding, False, '└──')

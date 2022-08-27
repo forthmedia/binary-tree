@@ -12,6 +12,11 @@ for (let n of nodes2) {
     tree2.insert(n)
 }
 
+console.log('tree 1')
+tree1.print();
+console.log('\ntree 2')
+tree2.print();
+
 // IS SAME TREE 
 const isSameTree = (p,q) => {
     if (p == null && q == null) return true;
@@ -19,8 +24,8 @@ const isSameTree = (p,q) => {
     if (p.value !== q.value) return false;
     return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
 }
-console.log('Is same tree ' + isSameTree(tree1, tree1));
-console.log('Is same tree ' + isSameTree(tree1, tree2));
+console.log('\nIs same tree: tree1 tree1 ' + isSameTree(tree1, tree1));
+console.log('Is same tree: tree1 tree2 ' + isSameTree(tree1, tree2));
 
 // MAX DEPTH
 const maxDepth = root => {
@@ -32,7 +37,7 @@ const maxDepth = root => {
     let maximum = Math.max(left, right);
     return maximum + 1;
 }
-console.log('Max depth tree 1 is: ' + maxDepth(tree1));
+console.log('\nMax depth tree 1 is: ' + maxDepth(tree1));
 console.log('Max depth tree 2 is: ' + maxDepth(tree2));
 
 // LEVEL ORDER BFS
@@ -60,5 +65,7 @@ const levelOrder = root => {
     }
     return result;
 }
-console.log('Level order bfs');
+console.log('\nLevel order BFS tree 1');
 console.log(levelOrder(tree1));
+console.log('Level order BFS tree 2');
+console.log(levelOrder(tree2));

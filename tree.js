@@ -21,13 +21,24 @@ export default class Node {
         }
     }
 
-    inorder() {
+    print(padding = '', pipe = false, pointer = '   ') {
+
+        console.log(padding + pointer + this.value)
+
+        if (pipe)
+            padding += '│  ';
+        else
+            padding += '   ';
+            
         if (this.left !== null) {
-            this.left.inorder();
+            this.left.print(
+                padding,
+                (this.right ? true : false),
+                (this.right ? '├──' : '└──')
+            );
         }
-        console.log(this.value)
         if (this.right !== null) {
-            this.right.inorder();
+            this.right.print(padding, false, '└──');
         }
     }
 }
